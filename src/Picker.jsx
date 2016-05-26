@@ -62,6 +62,7 @@ const Picker = React.createClass({
     selectedValue: PropTypes.any,
     children: PropTypes.array,
     pure: PropTypes.bool,
+    disabled: PropTypes.bool,
     onValueChange: PropTypes.func,
   },
 
@@ -69,6 +70,7 @@ const Picker = React.createClass({
     return {
       prefixCls: 'rmc-picker',
       pure: true,
+      disabled: false,
       onValueChange() {
       },
     };
@@ -127,15 +129,19 @@ const Picker = React.createClass({
   },
 
   onTouchEnd(e) {
-    this.doTouchEnd(+e.timeStamp);
+    if (!this.props.disabled) {
+      this.doTouchEnd(+e.timeStamp);
+    }
   },
 
   onTouchMove(e) {
-    this.doTouchMove(e.touches, +e.timeStamp);
+    if (!this.props.disabled) {
+      this.doTouchMove(e.touches, +e.timeStamp);
+    }
   },
 
   onTouchStart(e) {
-    if (e.target.tagName.match(/input|textarea|select/i)) {
+    if (e.target.tagName.match(/input|textarea|select/i) || this.props.disabled) {
       return;
     }
     e.preventDefault();
