@@ -1,0 +1,60 @@
+{
+  "name": "rmc-picker",
+  "version": "1.0.0",
+  "description": "React Mobile Picker Component",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-rmc-picker",
+    "rmc-picker"
+  ],
+  "homepage": "https://github.com/xshua06/rmc-picker",
+  "maitainers": [
+    "yiminghe@gmail.com",
+    "hualei5280@gmail.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xshua06/rmc-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xshua06/rmc-picker/issues"
+  },
+  "files": [
+    "lib",
+    "assets/*.css"
+  ],
+  "licenses": "MIT",
+  "main": "./lib/index",
+  "config": {
+    "port": 8020
+  },
+  "scripts": {
+    "build": "rc-tools run build",
+    "gh-pages": "rc-tools run gh-pages",
+    "start": "rc-tools run server",
+    "pub": "rc-tools run pub",
+    "lint": "rc-tools run lint",
+    "karma": "rc-tools run karma",
+    "saucelabs": "rc-tools run saucelabs",
+    "test": "rc-tools run test",
+    "chrome-test": "rc-tools run chrome-test",
+    "coverage": "rc-tools run coverage"
+  },
+  "dependencies": {
+    "rc-dialog": "6.x"
+  },
+  "devDependencies": {
+    "array-tree-filter": "1.x",
+    "expect.js": "0.3.x",
+    "fastclick": "^1.0.6",
+    "pre-commit": "1.x",
+    "rc-tools": "5.x",
+    "react": "0.14.x",
+    "react-addons-test-utils": "0.14.x",
+    "react-dom": "0.14.x"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
